@@ -1,0 +1,39 @@
+ 
+ {{#link-to 'index'}}
+ <i class="material-icons large left">arrow_back</i>
+ {{/link-to}}
+ {{#link-to 'nuevo-paquete' class="waves-effect waves-light btn right"}}
+ 	Nuevo paquete
+ {{/link-to}}
+
+
+
+
+<div class="container">
+	<table>
+        <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Editar</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        	{{#each model as |paquete|}}
+          <tr>
+          	
+            <td>{{paquete.nombre}}</td>
+            <td>{{paquete.precio}}</td>
+            <td>{{#link-to 'editar-paquete' paquete.id}}Editar{{/link-to}} --<a {{action 'borrar' paquete}}>Borrar</a></td>
+              </tr>
+            {{else}}
+            No hay paquetes :v
+           
+        
+           {{/each}}
+        
+        </tbody>
+      </table>
+
+</div>

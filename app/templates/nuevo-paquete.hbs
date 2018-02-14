@@ -1,0 +1,19 @@
+ 
+ {{#link-to 'paquetes'}}
+ <i class="material-icons large left">arrow_back</i>
+ {{/link-to}}
+
+ <div class="container" style="padding-top: 100px">
+ 	<h4>Nuevo paquete</h4>
+ 	<div class="input-field col s6">
+      {{input value=model.nombre  type="text" class="validate"}}
+      <label class="active" for="first_name2">Nombre</label>
+    </div>
+    <div class="input-field col s6">
+      {{input value=model.precio  type="number" class="validate"}}
+      <label class="active" for="first_name2">Precio</label>
+    </div>
+
+	<a {{action 'save' model}} class="waves-effect waves-light btn">Guardar</a>
+
+ </div>

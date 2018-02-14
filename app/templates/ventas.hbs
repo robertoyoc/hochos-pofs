@@ -1,0 +1,34 @@
+{{#link-to 'index'}}
+ <i class="material-icons large left">arrow_back</i>
+ {{/link-to}}
+<h4>Ventas</h4>
+ <div class="container" style="padding-top:40px">
+  <div style="height:520px;max-height:520px; overflow-y:scroll">
+ 	 <table >
+        <thead>
+          <tr>
+              <th>Fecha</th>
+              <th>Total</th>
+              <th>Borrar</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {{#each model as |venta|}}
+          <tr>
+            <td>{{venta.dia}} {{venta.hora}}</td>
+            <td>{{venta.total}}</td>
+            <td><a {{action 'borrar' venta}}>Borrar</a></td>
+          </tr>
+          {{else}}
+          No hay ventas :v
+        {{/each}}
+        </tbody>
+      </table>
+      </div>
+
+      <h5> #ventas: {{model.length}} generando ${{total}}</h5>
+
+
+
+ </div>

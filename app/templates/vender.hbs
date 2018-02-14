@@ -1,0 +1,21 @@
+{{#link-to 'index'}}
+ <i class="material-icons large left">arrow_back</i>
+ {{/link-to}}
+ <div class="container" style="padding-top: 100px">
+ 	<h4>Nueva venta</h4>
+ 	<label>Selecciona el paquete</label>
+ 	<div class="input-field col s6">
+
+ 		{{#power-select options=model.paquetes selected=model.venta.paquete searchField='nombre' onchange=(action (mut model.venta.paquete)) as |paquete|}}
+  		{{paquete.nombre}}
+	{{/power-select}}
+      
+    </div>
+    <div class="input-field col s6" style="margin-top:50px">
+      {{input value=model.venta.cantidad  type="number" class="validate"}}
+      <label class="active" for="first_name2">Cantidad</label>
+    </div>
+
+	<a {{action 'save' model.venta}} class="waves-effect waves-light btn">Vender</a>
+
+ </div>
